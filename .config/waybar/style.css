@@ -10,9 +10,6 @@
  * Keyframes
  * -------------------------------------------------------------------------- */
 
-@define-color highlight #685878 ;
-@define-color base1  #19191e ;
-
 @keyframes blink-warning {
     70% {
         color: white;
@@ -20,7 +17,7 @@
 
     to {
         color: white;
-        background-color: orange;
+        background-color: @yellow;
     }
 }
 
@@ -31,13 +28,14 @@
 
     to {
         color: white;
-        background-color: red;
+        background-color: @red;
     }
 }
 
 /* -----------------------------------------------------------------------------
  * Base styles
  * -------------------------------------------------------------------------- */
+@import "mocha.css";
 
 /* Reset all styles */
 * {
@@ -51,8 +49,8 @@
 /* The whole bar */
 #waybar {
     background: transparent;
-    color: #e3e3ea;
-    background-color: @base1;
+    color: @subtext0;
+    background-color: @base;
     font-family: JetBrainsMono;
     font-size: 13px;
 }
@@ -77,34 +75,34 @@
  * Module styles
  * -------------------------------------------------------------------------- */
 
-#custom-launcher {
-    margin-left:15px;
-    margin-right:10px;
-}
-
 #workspaces {
     font-size:13px;
 }
 
 #workspaces button {
-    border-radius: 5px;
-    color: #eceff4;
+    color: @text;
     padding: 1px 6px;
     margin-right: 2px;
     margin-left: 2px;
+    border: 1px solid transparent;
+}
+
+#workspaces button:hover {
+    background-color: @mantle;
+    border: 1px solid @text;
 }
 
 #workspaces button.focused {
-    border: 1px solid #d8dee9;
+    background-color: @mantle;
+    border: 1px solid @text;
 }
 
 #workspaces button.urgent {
-    border-color: #c9545d;
-    color: #c9545d;
+    color: @red;
 }
 
 #mode {
-    background: @highlight;
+    background: @lavender;
     border-bottom: 3px transparent;
     color:white;
     margin-left: 5px;
@@ -116,15 +114,15 @@
 }
 
 #network.disconnected {
-    color: orange;
+    color: @yellow;
 }
 
 #cpu.warning {
-    color: orange;
+    color: @yellow;
 }
 
 #cpu.critical {
-    color: red;
+    color: @red;
 }
 
 #memory {
@@ -134,11 +132,11 @@
 }
 
 #memory.warning {
-    color: orange;
+    color: @yellow;
  }
 
 #memory.critical {
-    color: red;
+    color: @red;
     animation-name: blink-critical;
     animation-duration: 2s;
     padding-left:5px;
@@ -152,7 +150,7 @@
 }
 
 #pulseaudio.muted {
-    color: @highlight;
+    color: @red;
 }
 
 #battery {
@@ -162,11 +160,11 @@
 }
 
 #battery.warning {
-    color: orange;
+    color: @yellow;
 }
 
 #battery.critical {
-    color: red;
+    color: @red;
 }
 
 #battery.warning.discharging {
