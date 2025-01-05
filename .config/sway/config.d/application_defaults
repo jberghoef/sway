@@ -21,3 +21,27 @@ for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
 # Inhibit idle
 for_window [app_id="firefox"] inhibit_idle fullscreen
 for_window [app_id="Chromium"] inhibit_idle fullscreen
+
+# Custom
+for_window [title="Picture-in-picture" app_id="firefox"] {
+    inhibit_idle
+    floating enable
+    sticky enable
+    resize set width 20ppt height 20ppt
+    move position 80 ppt 80 ppt
+    move left 20px
+    move up 20px
+    border pixel 1
+}
+for_window [class="1Password"] {
+    floating enable
+    sticky enable
+    border pixel 1
+}
+for_window [title="Wine System Tray" class="explorer.exe"] kill
+
+for_window [app_id="thunderbird"] workspace 3
+for_window [class="discord"] workspace 5
+for_window [class="steam"] workspace 6
+for_window [title="Lutris"] workspace 6
+for_window [class="steam_app_*"] workspace 7
