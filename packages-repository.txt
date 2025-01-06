@@ -54,6 +54,7 @@ sway-contrib
 swaybg
 swayidle
 sysstat
+qt6-wayland
 thunar
 thunar-archive-plugin
 thunar-volman
